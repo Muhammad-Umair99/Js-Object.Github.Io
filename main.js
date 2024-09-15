@@ -12,7 +12,7 @@
 
 // 1) USE OBJECT LITERAL
 
-  let student = {
+  var student = {
     name: "umair",
     age: 18,
     study: "computer science",
@@ -20,3 +20,30 @@
   }
 
   document.querySelector("#para").innerHTML = `${student.name} is ${student.age} year old and ${student.study} in ${student.year}`;
+
+  //USE THE KEYWORD "NEW OBJECT"
+  var student = new Object();
+  student.name = "umair",
+  student.age = 18,
+  student.study = "computer science"
+  student.year = 2024,
+
+  document.querySelector("#para").innerHTML = `${student.name} is ${student.age} year old and ${student.study} in ${student.year}`;
+
+
+  //USE AN OBJECT CONSTRUCTOR
+// Object constructor
+function stud(name, age, study, year) {
+  this.name = name;
+  this.age = age;
+  this.study = study;
+  this.year = year; 
+}
+
+// Instantiate the object using the `new` keyword
+var student = new stud("umair", 18, "computer science", 2024);
+
+// Update the innerHTML of the element with id "para"
+document.querySelector("#para").innerHTML = `${student.name} is ${student.age} years old and studies ${student.study} in ${student.year}.`;
+
+
